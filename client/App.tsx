@@ -13,7 +13,7 @@ const customTheme = createTheme({
       main: '#fff',
     },
     secondary: {
-      main: '#fff',
+      main: '#f8c8dc',
     },
     background: {
       default: '#333',
@@ -40,15 +40,15 @@ const App: React.FC = () => {
               Spaced Repetition App
             </Typography>
             {user ? (
-              <Button color="secondary" component={Link} to="/logout" variant="outlined">
+              <Button color="secondary" component={Link} to="/logout" variant="outlined" sx={{ padding: '6px 12px' }}>
                 Logout
               </Button>
             ) : (
               <>
-                <Button color="secondary" component={Link} to="/login" variant="outlined" sx={{ mr: 2 }}>
+                <Button color="secondary" component={Link} to="/login" variant="outlined" sx={{ fontSize: '1.1rem', padding: '10px 12px', mr: 2 }}>
                   Login
                 </Button>
-                <Button color="secondary" component={Link} to="/register" variant="contained">
+                <Button color="secondary" component={Link} to="/register" variant="contained" sx={{ fontSize: '1.1rem', padding: '10px 12px' }}>
                   Register
                 </Button>
               </>
@@ -56,17 +56,17 @@ const App: React.FC = () => {
           </Toolbar>
         </AppBar>
         <Container maxWidth="sm" sx={{ textAlign: 'center', py: 8 }}>
-          <Typography variant="h1" component="h1" gutterBottom>
+          <Typography variant="h1" component="h2" gutterBottom>
             Spaced Repetition App
           </Typography>
-          <Typography variant="h4" sx={{ mb: 4 }}>
+          <Typography variant="h5" sx={{ mb: 4 }}>
             Start learning today
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
-            <Button variant="contained" color="secondary" component={Link} to="/flashcards">
+            <Button variant="contained" color="secondary" component={Link} to="/flashcards" sx={{ fontSize: '1.4rem', padding: '10px 32px', borderRadius: '15px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
               Flashcards
             </Button>
-            <Button variant="contained" color="secondary" component={Link} to="/decks">
+            <Button variant="contained" color="secondary" component={Link} to="/decks" sx={{ fontSize: '1.4rem', padding: '10px 32px', borderRadius: '15px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
               Decks
             </Button>
           </Box>
