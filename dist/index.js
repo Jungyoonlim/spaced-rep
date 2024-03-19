@@ -49962,7 +49962,7 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
   });
   var App = () => {
     const user = useSelector((state) => state.user.user);
-    return /* @__PURE__ */ import_react8.default.createElement(ThemeProvider5, { theme: customTheme }, /* @__PURE__ */ import_react8.default.createElement(Box_default, { sx: { backgroundColor: "#333", minHeight: "100vh" } }, /* @__PURE__ */ import_react8.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react8.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react8.default.createElement(Typography_default, { variant: "h6", component: "div", sx: { flexGrow: 1 } }, "Spaced Repetition App"), user ? /* @__PURE__ */ import_react8.default.createElement(Button_default, { color: "secondary", component: Link, to: "/logout", variant: "outlined", sx: { padding: "6px 12px" } }, "Logout") : /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(Button_default, { color: "secondary", component: Link, to: "/login", variant: "outlined", sx: { fontSize: "1.1rem", padding: "10px 12px", mr: 2 } }, "Login"), /* @__PURE__ */ import_react8.default.createElement(Button_default, { color: "secondary", component: Link, to: "/register", variant: "contained", sx: { fontSize: "1.1rem", padding: "10px 12px" } }, "Register")))), /* @__PURE__ */ import_react8.default.createElement(Container_default, { maxWidth: "sm", sx: { textAlign: "center", py: 8 } }, /* @__PURE__ */ import_react8.default.createElement(Typography_default, { variant: "h1", component: "h2", gutterBottom: true }, "Spaced Repetition App"), /* @__PURE__ */ import_react8.default.createElement(Typography_default, { variant: "h5", sx: { mb: 4 } }, "Start learning today"), /* @__PURE__ */ import_react8.default.createElement(Box_default, { sx: { display: "flex", justifyContent: "center", gap: "20px" } }, /* @__PURE__ */ import_react8.default.createElement(Button_default, { variant: "contained", color: "secondary", component: Link, to: "/flashcards", sx: { fontSize: "1.4rem", padding: "10px 32px", borderRadius: "15px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" } }, "Flashcards"), /* @__PURE__ */ import_react8.default.createElement(Button_default, { variant: "contained", color: "secondary", component: Link, to: "/decks", sx: { fontSize: "1.4rem", padding: "10px 32px", borderRadius: "15px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" } }, "Decks")))));
+    return /* @__PURE__ */ import_react8.default.createElement(ThemeProvider5, { theme: customTheme }, /* @__PURE__ */ import_react8.default.createElement(Box_default, { sx: { backgroundColor: "#333", minHeight: "100vh" } }, /* @__PURE__ */ import_react8.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react8.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react8.default.createElement(Typography_default, { variant: "h6", component: "div", sx: { flexGrow: 1 } }, "Spaced Repetition App"), user ? /* @__PURE__ */ import_react8.default.createElement(Button_default, { color: "secondary", component: Link, to: "/logout", variant: "outlined", sx: { padding: "6px 12px" } }, "Logout") : /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(Button_default, { color: "secondary", component: Link, to: "/login", variant: "outlined", sx: { fontSize: "1.1rem", padding: "8px 10px", mr: 2 } }, "Login"), /* @__PURE__ */ import_react8.default.createElement(Button_default, { color: "secondary", component: Link, to: "/register", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Register")))), /* @__PURE__ */ import_react8.default.createElement(Container_default, { maxWidth: "sm", sx: { textAlign: "center", py: 8 } }, /* @__PURE__ */ import_react8.default.createElement(Typography_default, { variant: "h1", component: "h2", gutterBottom: true }, "Spaced Repetition App"), /* @__PURE__ */ import_react8.default.createElement(Typography_default, { variant: "h5", sx: { mb: 4 } }, "Start learning today"), /* @__PURE__ */ import_react8.default.createElement(Box_default, { sx: { display: "flex", justifyContent: "center", gap: "20px" } }, /* @__PURE__ */ import_react8.default.createElement(Button_default, { variant: "contained", color: "secondary", component: Link, to: "/flashcards", sx: { fontSize: "1.4rem", padding: "10px 32px", borderRadius: "10px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" } }, "Flashcards"), /* @__PURE__ */ import_react8.default.createElement(Button_default, { variant: "contained", color: "secondary", component: Link, to: "/decks", sx: { fontSize: "1.4rem", padding: "10px 32px", borderRadius: "10px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" } }, "Decks")))));
   };
   var App_default = App;
 
@@ -50129,6 +50129,27 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
 
   // client/components/Login.tsx
   var import_react13 = __toESM(require_react());
+  var customTheme2 = createTheme_default2({
+    palette: {
+      mode: "dark",
+      primary: {
+        main: "#fff"
+      },
+      secondary: {
+        main: "#f8c8dc"
+      },
+      background: {
+        default: "#333",
+        paper: "#333"
+      }
+    },
+    typography: {
+      fontFamily: '"Playfair Display", serif',
+      allVariants: {
+        color: "#fff"
+      }
+    }
+  });
   var Login = () => {
     const [email, setEmail] = (0, import_react13.useState)("");
     const [password, setPassword] = (0, import_react13.useState)("");
@@ -50148,7 +50169,7 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
         console.error("Login failed:", error);
       });
     };
-    return /* @__PURE__ */ import_react13.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react13.default.createElement("h2", null, "Login"), /* @__PURE__ */ import_react13.default.createElement(
+    return /* @__PURE__ */ import_react13.default.createElement(ThemeProvider5, { theme: customTheme2 }, /* @__PURE__ */ import_react13.default.createElement(Box_default, { sx: { backgroundColor: "#333", minHeight: "100vh" } }, /* @__PURE__ */ import_react13.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react13.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react13.default.createElement(Button_default, { color: "secondary", component: Link, to: "/", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Return"))), /* @__PURE__ */ import_react13.default.createElement(Container_default, { maxWidth: "sm", sx: { textAlign: "center", py: 8 } }, /* @__PURE__ */ import_react13.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react13.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react13.default.createElement(Typography_default, { variant: "h3", component: "h2", gutterBottom: true }, "Login"), /* @__PURE__ */ import_react13.default.createElement(
       TextField_default,
       {
         label: "Email",
@@ -50166,13 +50187,13 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
         onChange: (e) => setPassword(e.target.value),
         required: true
       }
-    ), /* @__PURE__ */ import_react13.default.createElement(Button_default, { type: "submit", variant: "contained" }, "Login"));
+    ), /* @__PURE__ */ import_react13.default.createElement(Button_default, { type: "submit", variant: "contained" }, "Login"))))));
   };
   var Login_default = Login;
 
   // client/components/Register.tsx
   var import_react14 = __toESM(require_react());
-  var customTheme2 = createTheme_default2({
+  var customTheme3 = createTheme_default2({
     palette: {
       mode: "dark",
       primary: {
@@ -50213,7 +50234,7 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
         console.error("Registration failed:", error);
       });
     };
-    return /* @__PURE__ */ import_react14.default.createElement(ThemeProvider5, { theme: customTheme2 }, /* @__PURE__ */ import_react14.default.createElement(Box_default, { sx: { backgroundColor: "#333", minHeight: "100vh" } }, /* @__PURE__ */ import_react14.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react14.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react14.default.createElement(Button_default, { color: "secondary", component: Link, to: "/", variant: "contained", sx: { fontSize: "1.1rem", padding: "10px 12px" } }, "Return"))), /* @__PURE__ */ import_react14.default.createElement(Container_default, { maxWidth: "sm", sx: { textAlign: "center", py: 8 } }, /* @__PURE__ */ import_react14.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react14.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react14.default.createElement(Typography_default, { variant: "h3", component: "h2", gutterBottom: true }, "Register"), /* @__PURE__ */ import_react14.default.createElement(
+    return /* @__PURE__ */ import_react14.default.createElement(ThemeProvider5, { theme: customTheme3 }, /* @__PURE__ */ import_react14.default.createElement(Box_default, { sx: { backgroundColor: "#333", minHeight: "100vh" } }, /* @__PURE__ */ import_react14.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react14.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react14.default.createElement(Button_default, { color: "secondary", component: Link, to: "/", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Return"))), /* @__PURE__ */ import_react14.default.createElement(Container_default, { maxWidth: "sm", sx: { textAlign: "center", py: 8 } }, /* @__PURE__ */ import_react14.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react14.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react14.default.createElement(Typography_default, { variant: "h3", component: "h2", gutterBottom: true }, "Register"), /* @__PURE__ */ import_react14.default.createElement(
       TextField_default,
       {
         label: "Name",

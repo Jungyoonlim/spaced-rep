@@ -45,10 +45,10 @@ const App: React.FC = () => {
               </Button>
             ) : (
               <>
-                <Button color="secondary" component={Link} to="/login" variant="outlined" sx={{ fontSize: '1.1rem', padding: '10px 12px', mr: 2 }}>
+                <Button color="secondary" component={Link} to="/login" variant="outlined" sx={{ fontSize: '1.1rem', padding: '8px 10px', mr: 2 }}>
                   Login
                 </Button>
-                <Button color="secondary" component={Link} to="/register" variant="contained" sx={{ fontSize: '1.1rem', padding: '10px 12px' }}>
+                <Button color="secondary" component={Link} to="/register" variant="contained" sx={{ fontSize: '1.1rem', padding: '8px 10px' }}>
                   Register
                 </Button>
               </>
@@ -63,10 +63,10 @@ const App: React.FC = () => {
             Start learning today
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
-            <Button variant="contained" color="secondary" component={Link} to="/flashcards" sx={{ fontSize: '1.4rem', padding: '10px 32px', borderRadius: '15px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
+            <Button variant="contained" color="secondary" component={Link} to="/flashcards" sx={{ fontSize: '1.4rem', padding: '10px 32px', borderRadius: '10px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
               Flashcards
             </Button>
-            <Button variant="contained" color="secondary" component={Link} to="/decks" sx={{ fontSize: '1.4rem', padding: '10px 32px', borderRadius: '15px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
+            <Button variant="contained" color="secondary" component={Link} to="/decks" sx={{ fontSize: '1.4rem', padding: '10px 32px', borderRadius: '10px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
               Decks
             </Button>
           </Box>

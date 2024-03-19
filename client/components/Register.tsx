@@ -61,7 +61,7 @@ const Register: React.FC = () => {
       <Box sx={{ backgroundColor: '#333', minHeight: '100vh' }}>
       <AppBar position="static">
         <Toolbar>
-      <Button color="secondary" component={Link} to="/" variant="contained" sx={{ fontSize: '1.1rem', padding: '10px 12px' }}>
+      <Button color="secondary" component={Link} to="/" variant="contained" sx={{ fontSize: '1.1rem', padding: '8px 10px' }}>
           Return
         </Button>
         </Toolbar>
