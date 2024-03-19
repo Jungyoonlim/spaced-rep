@@ -1,0 +1,37 @@
+{
+  "name": "spaced-repetition-app",
+  "version": "1.0.0",
+  "description": "A modern, intuitive, and user-friendly spaced repetition app that leverages AI to enhance the learning experience.",
+  "main": "server/index.ts",
+  "scripts": {
+    "start": "bun run server/index.ts",
+    "dev": "bun i && bun --watch server/index.ts",
+    "build": "cd client && bun build"
+  },
+  "dependencies": {
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "@mui/material": "latest",
+    "@reduxjs/toolkit": "latest",
+    "better-sqlite3": "^9.4.3",
+    "bun": "latest",
+    "cookie-parser": "latest",
+    "esbuild": "latest",
+    "express": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-redux": "latest",
+    "react-router-dom": "latest",
+    "socket.io": "latest",
+    "socket.io-client": "latest"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "latest",
+    "@types/express": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "concurrently": "latest",
+    "typescript": "latest"
+  }
+}
