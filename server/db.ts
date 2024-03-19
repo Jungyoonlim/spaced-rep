@@ -1,41 +1,16 @@
-import Database from 'better-sqlite3';
+import { Pool } from 'pg';
 import { Flashcard, Deck, User } from '../shared/types';
 
 export async function initializeDatabase() {
-  const db = new Database('./database.sqlite');
+  const pool = new Pool({
+    host: 'localhost',
+    port: 5432,
+    database: 'your_database_name',
+    user: 'your_username',
+    password: 'your_password',
+  });
 
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS flashcards (
-      id TEXT PRIMARY KEY,
-      front TEXT NOT NULL,
-      back TEXT NOT NULL,
-      deckId TEXT NOT NULL,
-      createdAt TEXT NOT NULL,
-      updatedAt TEXT NOT NULL,
-      FOREIGN KEY (deckId) REFERENCES decks (id)
-    );
-
-    CREATE TABLE IF NOT EXISTS decks (
-      id TEXT PRIMARY KEY,
-      name TEXT NOT NULL,
-      description TEXT,
-      userId TEXT NOT NULL,
-      createdAt TEXT NOT NULL,
-      updatedAt TEXT NOT NULL,
-      FOREIGN KEY (userId) REFERENCES users (id)
-    );
-
-    CREATE TABLE IF NOT EXISTS users (
-      id TEXT PRIMARY KEY,
-      email TEXT NOT NULL UNIQUE,
-      password TEXT NOT NULL,
-      name TEXT NOT NULL,
-      createdAt TEXT NOT NULL,
-      updatedAt TEXT NOT NULL
-    );
-  `);
-
-  return db;
+  return pool;
 }
 
 export async function getFlashcards(): Promise<Flashcard[]> {
@@ -78,9 +53,9 @@ export async function updateFlashcard(id: string, flashcard: Partial<Omit<Flashc
   return updatedFlashcard;
 }
 
-export async function deleteFlashcard(id: string): Promise<boolean> {
+export async function deleteFlashcard(id: string, userId: string): Promise<boolean> {
   const db = await initializeDatabase();
-  const result = await db.run('DELETE FROM flashcards WHERE id = ?', id);
+  const result = await db.run('DELETE FROM flashcards WHERE id = ? AND userId = ?', userId);
   await db.close();
   return result.changes > 0;
 }
@@ -125,9 +100,9 @@ export async function updateDeck(id: string, deck: Partial<Omit<Deck, 'id' | 'cr
   return updatedDeck;
 }
 
-export async function deleteDeck(id: string): Promise<boolean> {
+export async function deleteDeck(id: string, userId: string): Promise<boolean> {
   const db = await initializeDatabase();
-  const result = await db.run('DELETE FROM decks WHERE id = ?', id);
+  const result = await db.run('DELETE FROM decks WHERE id = ? and userId = ?', id, userId);
   await db.close();
   return result.changes > 0;
 }
@@ -159,3 +134,16 @@ export async function createUser(user: Omit<User, 'id' | 'createdAt' | 'updatedA
   return createdUser!;
 }
 
+export async function getFlashcardsByUserId(userId: string): Promise<Flashcard[]> {
+  const db = await initializeDatabase();
+  const flashcards = await db.all<Flashcard[]>('SELECT * FROM flashcards WHERE userId = ?', userId);
+  await db.close();
+  return flashcards;
+}
+
+export async function getDeckByUserId(userId: string): Promise<Deck[]> {
+  const db = await initializeDatabase();
+  const decks = await db.all<Deck[]>('SELECT * FROM decks WHERE userId = ?', userId);
+  await db.close();
+  return decks;
+}

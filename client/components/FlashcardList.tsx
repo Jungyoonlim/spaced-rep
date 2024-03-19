@@ -8,7 +8,7 @@ import { Flashcard } from '../../shared/types';
 import { List, ListItem, ListItemText, Button } from '@mui/material';
 
 const FlashcardList: React.FC = () => {
-  const flashcards = useSelector((state: RootState) => state.flashcard.flashcards);
+  const flashcards = useSelector((state: RootState) => state.flashcard.flashcards as Flashcard[]);
   const dispatch = useDispatch();
 
   useEffect(() => {

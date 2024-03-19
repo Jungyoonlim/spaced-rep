@@ -13,7 +13,7 @@
     "@emotion/styled": "latest",
     "@mui/material": "latest",
     "@reduxjs/toolkit": "latest",
-    "better-sqlite3": "^9.4.3",
+    "pg": "^8.11.3",
     "bun": "latest",
     "cookie-parser": "latest",
     "esbuild": "latest",
