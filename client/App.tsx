@@ -25,6 +25,10 @@ const customTheme = createTheme({
     allVariants: {
       color: '#fff',
     },
+    h1: {
+      fontSize: '3rem',
+      fontWeight: 'bold',
+    },
   },
 });
 
@@ -33,9 +37,24 @@ const App: React.FC = () => {
 
   return (
     <ThemeProvider theme={customTheme}>
-      <Box sx={{ backgroundColor: '#333', minHeight: '100vh' }}>
-        <AppBar position="static">
-          <Toolbar>
+      <Box sx={{
+        backgroundColor: '#333',
+        minHeight: '100vh',
+        backgroundImage: 'linear-gradient(to bottom right, #444, #222)', 
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center', 
+      }}>
+      <AppBar position="static" sx={{
+          backgroundColor: '#f8c8dc',
+          boxShadow: 'none',
+          mx: 'auto',
+          maxWidth: 'calc(100% - 48px)',
+          borderRadius: 50,
+          mt: 2, 
+        }}>
+      <Container maxWidth="xl">
+      <Toolbar sx={{ justifyContent: 'space-between', padding: '0 24px' }}>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Spaced Repetition App
             </Typography>
@@ -54,19 +73,44 @@ const App: React.FC = () => {
               </>
             )}
           </Toolbar>
-        </AppBar>
-        <Container maxWidth="sm" sx={{ textAlign: 'center', py: 8 }}>
-          <Typography variant="h1" component="h2" gutterBottom>
-            Spaced Repetition App
+        </Container>
+      </AppBar>
+
+      <Container sx={{
+          textAlign: 'center',
+          py: 8,
+          flexGrow: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center', 
+          alignItems: 'center', 
+        }}>
+          <Typography variant="h1" component="h2" gutterBottom sx={{
+            fontSize: '4rem',
+            fontWeight: 'bold',
+            textAlign: 'center', 
+            width: '100%', 
+          }}>
+            Learn Everything.<br />Right Instantly.
           </Typography>
           <Typography variant="h5" sx={{ mb: 4 }}>
             Start learning today
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
-            <Button variant="contained" color="secondary" component={Link} to="/flashcards" sx={{ fontSize: '1.4rem', padding: '10px 32px', borderRadius: '10px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
-              Flashcards
+          <Button variant="contained" color="secondary" component={Link} to="/flashcards" sx={{
+              fontSize: '1.4rem',
+              padding: '10px 32px',
+              borderRadius: '10px',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+            }}>              
+            Flashcards
             </Button>
-            <Button variant="contained" color="secondary" component={Link} to="/decks" sx={{ fontSize: '1.4rem', padding: '10px 32px', borderRadius: '10px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
+            <Button variant="contained" color="secondary" component={Link} to="/decks" sx={{
+              fontSize: '1.4rem',
+              padding: '10px 32px',
+              borderRadius: '10px',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+            }}>
               Decks
             </Button>
           </Box>

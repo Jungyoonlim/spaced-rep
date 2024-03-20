@@ -93,10 +93,10 @@ const FlashcardForm: React.FC = () => {
 
   return (
     <ThemeProvider theme={customTheme}>
-    <Box sx={{ backgroundColor: '#333', minHeight: '100vh' }}>
-    <AppBar position="static">
+      <Box sx={{ backgroundColor: '#333', minHeight: '100vh', backgroundImage: 'linear-gradient(to bottom right, #444, #222)', display: 'flex', flexDirection: 'column' }}>
+      <AppBar position="static" sx={{ backgroundColor: 'transparent', boxShadow: 'none', borderRadius: '20px', mx: 'auto', my: 1 }}>
       <Toolbar>
-    <Button color="secondary" component={Link} to="/" variant="contained" sx={{ fontSize: '1.1rem', padding: '8px 10px' }}>
+    <Button color="secondary" component={Link} to="/" variant="contained" sx={{ fontSize: '1.1rem', padding: '8px 10px', marginRight: '16px' }}>
         Home
       </Button>
       <Button color="secondary" component={Link} to="/flashcards" variant="contained" sx={{ fontSize: '1.1rem', padding: '8px 10px' }}>
