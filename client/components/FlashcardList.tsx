@@ -35,8 +35,17 @@ const FlashcardList: React.FC = () => {
 
   useEffect(() => {
     fetch('/api/flashcards')
-      .then(response => response.json())
-      .then(data => dispatch(setFlashcards(data)));
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch flashcards');
+        }
+        return response.json();
+      })
+      .then(data => dispatch(setFlashcards(data)))
+      .catch(error => {
+        console.error('Error fetching flashcards:', error);
+        // Display an error message to the user or handle the error state
+      });
   }, [dispatch]);
 
   const handleDelete = (id: string) => {

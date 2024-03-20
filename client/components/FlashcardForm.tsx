@@ -74,10 +74,19 @@ const FlashcardForm: React.FC = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newFlashcard),
       })
-        .then(response => response.json())
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Failed to create flashcard');
+          }
+          return response.json();
+        })
         .then(data => {
           dispatch(addFlashcard(data));
           navigate('/flashcards');
+        })
+        .catch(error => {
+          console.error('Error creating flashcard:', error);
+          // Display an error message to the user or handle the error state
         });
     }
   };

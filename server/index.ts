@@ -45,9 +45,14 @@ app.get('/api/flashcards/:id', async (req, res) => {
 });
 
 app.post('/api/flashcards', async (req, res) => {
-  const flashcardData: CreateFlashcardDto = req.body;
-  const flashcard = await createFlashcard(flashcardData);
-  res.status(201).json(flashcard);
+  try {
+    const flashcardData: CreateFlashcardDto = req.body;
+    const flashcard = await createFlashcard(flashcardData);
+    res.status(201).json(flashcard);
+  } catch (error) {
+    console.error('Error creating flashcard:', error);
+    res.status(500).json({ message: 'Failed to create flashcard' });
+  }
 });
 
 app.put('/api/flashcards/:id', async (req, res) => {

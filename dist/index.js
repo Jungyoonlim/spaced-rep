@@ -49993,7 +49993,14 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
     const flashcards = useSelector((state) => state.flashcard.flashcards);
     const dispatch = useDispatch();
     (0, import_react9.useEffect)(() => {
-      fetch("/api/flashcards").then((response) => response.json()).then((data) => dispatch(setFlashcards(data)));
+      fetch("/api/flashcards").then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch flashcards");
+        }
+        return response.json();
+      }).then((data) => dispatch(setFlashcards(data))).catch((error) => {
+        console.error("Error fetching flashcards:", error);
+      });
     }, [dispatch]);
     const handleDelete = (id) => {
       fetch(`/api/flashcards/${id}`, { method: "DELETE" }).then(() => dispatch(deleteFlashcard(id)));
@@ -50063,9 +50070,16 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(newFlashcard)
-        }).then((response) => response.json()).then((data) => {
+        }).then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to create flashcard");
+          }
+          return response.json();
+        }).then((data) => {
           dispatch(addFlashcard(data));
           navigate("/flashcards");
+        }).catch((error) => {
+          console.error("Error creating flashcard:", error);
         });
       }
     };
