@@ -5,9 +5,9 @@ export async function initializeDatabase() {
   const pool = new Pool({
     host: 'localhost',
     port: 5432,
-    database: 'your_database_name',
-    user: 'your_username',
-    password: 'your_password',
+    database: 'flashcards',
+    user: 'limjungyoon',
+    password: 'Swannsway.1',
   });
 
   return pool;
