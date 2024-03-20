@@ -55,8 +55,8 @@ const App: React.FC = () => {
         }}>
       <Container maxWidth="xl">
       <Toolbar sx={{ justifyContent: 'space-between', padding: '0 24px' }}>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Spaced Repetition App
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: '#333' }}>
+              The Spaced Repetition App
             </Typography>
             {user ? (
               <Button color="secondary" component={Link} to="/logout" variant="outlined" sx={{ padding: '6px 12px' }}>
@@ -64,7 +64,7 @@ const App: React.FC = () => {
               </Button>
             ) : (
               <>
-                <Button color="secondary" component={Link} to="/login" variant="outlined" sx={{ fontSize: '1.1rem', padding: '8px 10px', mr: 2 }}>
+                <Button color="secondary" component={Link} to="/login" variant="contained" sx={{ fontSize: '1.1rem', padding: '8px 10px', mr: 2 }}>
                   Login
                 </Button>
                 <Button color="secondary" component={Link} to="/register" variant="contained" sx={{ fontSize: '1.1rem', padding: '8px 10px' }}>
