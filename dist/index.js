@@ -49968,6 +49968,27 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
 
   // client/components/FlashcardList.tsx
   var import_react9 = __toESM(require_react());
+  var customTheme2 = createTheme_default2({
+    palette: {
+      mode: "dark",
+      primary: {
+        main: "#fff"
+      },
+      secondary: {
+        main: "#f8c8dc"
+      },
+      background: {
+        default: "#333",
+        paper: "#333"
+      }
+    },
+    typography: {
+      fontFamily: '"Playfair Display", serif',
+      allVariants: {
+        color: "#fff"
+      }
+    }
+  });
   var FlashcardList = () => {
     const flashcards = useSelector((state) => state.flashcard.flashcards);
     const dispatch = useDispatch();
@@ -49977,12 +49998,33 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
     const handleDelete = (id) => {
       fetch(`/api/flashcards/${id}`, { method: "DELETE" }).then(() => dispatch(deleteFlashcard(id)));
     };
-    return /* @__PURE__ */ import_react9.default.createElement("div", null, /* @__PURE__ */ import_react9.default.createElement("h2", null, "Flashcards"), /* @__PURE__ */ import_react9.default.createElement(Button_default, { variant: "contained", component: Link, to: "/flashcards/new" }, "Create Flashcard"), /* @__PURE__ */ import_react9.default.createElement(List_default, null, flashcards.map((flashcard) => /* @__PURE__ */ import_react9.default.createElement(ListItem_default, { key: flashcard.id }, /* @__PURE__ */ import_react9.default.createElement(ListItemText_default, { primary: flashcard.front, secondary: flashcard.back }), /* @__PURE__ */ import_react9.default.createElement(Button_default, { component: Link, to: `/flashcards/${flashcard.id}/edit` }, "Edit"), /* @__PURE__ */ import_react9.default.createElement(Button_default, { onClick: () => handleDelete(flashcard.id) }, "Delete")))));
+    return /* @__PURE__ */ import_react9.default.createElement(ThemeProvider5, { theme: customTheme2 }, /* @__PURE__ */ import_react9.default.createElement(Box_default, { sx: { backgroundColor: "#333", minHeight: "100vh" } }, /* @__PURE__ */ import_react9.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react9.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react9.default.createElement(Button_default, { color: "secondary", component: Link, to: "/", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Home"))), /* @__PURE__ */ import_react9.default.createElement(Container_default, { maxWidth: "sm", sx: { textAlign: "center", py: 8 } }, /* @__PURE__ */ import_react9.default.createElement(Typography_default, { variant: "h4", component: "h2", sx: { mb: 4 } }, "Flashcards"), /* @__PURE__ */ import_react9.default.createElement(Button_default, { variant: "contained", color: "secondary", component: Link, to: "/flashcards/new", sx: { mb: 4 } }, "Create Flashcard"), /* @__PURE__ */ import_react9.default.createElement(List_default, null, flashcards.map((flashcard) => /* @__PURE__ */ import_react9.default.createElement(ListItem_default, { key: flashcard.id }, /* @__PURE__ */ import_react9.default.createElement(ListItemText_default, { primary: flashcard.front, secondary: flashcard.back }), /* @__PURE__ */ import_react9.default.createElement(Button_default, { variant: "outlined", color: "secondary", component: Link, to: `/flashcards/${flashcard.id}/edit`, sx: { mr: 2 } }, "Edit"), /* @__PURE__ */ import_react9.default.createElement(Button_default, { variant: "outlined", color: "secondary", onClick: () => handleDelete(flashcard.id) }, "Delete")))))));
   };
   var FlashcardList_default = FlashcardList;
 
   // client/components/FlashcardForm.tsx
   var import_react10 = __toESM(require_react());
+  var customTheme3 = createTheme_default2({
+    palette: {
+      mode: "dark",
+      primary: {
+        main: "#fff"
+      },
+      secondary: {
+        main: "#f8c8dc"
+      },
+      background: {
+        default: "#333",
+        paper: "#333"
+      }
+    },
+    typography: {
+      fontFamily: '"Playfair Display", serif',
+      allVariants: {
+        color: "#fff"
+      }
+    }
+  });
   var FlashcardForm = () => {
     const [front, setFront] = (0, import_react10.useState)("");
     const [back, setBack] = (0, import_react10.useState)("");
@@ -50027,7 +50069,7 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
         });
       }
     };
-    return /* @__PURE__ */ import_react10.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react10.default.createElement("h2", null, currentFlashcard ? "Edit Flashcard" : "Create Flashcard"), /* @__PURE__ */ import_react10.default.createElement(
+    return /* @__PURE__ */ import_react10.default.createElement(ThemeProvider5, { theme: customTheme3 }, /* @__PURE__ */ import_react10.default.createElement(Box_default, { sx: { backgroundColor: "#333", minHeight: "100vh" } }, /* @__PURE__ */ import_react10.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react10.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react10.default.createElement(Button_default, { color: "secondary", component: Link, to: "/", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Home"), /* @__PURE__ */ import_react10.default.createElement(Button_default, { color: "secondary", component: Link, to: "/flashcards", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Back"))), /* @__PURE__ */ import_react10.default.createElement(Container_default, { maxWidth: "sm", sx: { textAlign: "center", py: 8 } }, /* @__PURE__ */ import_react10.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react10.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react10.default.createElement(Typography_default, { variant: "h3", component: "h2", gutterBottom: true }, "Create Flashcard"), /* @__PURE__ */ import_react10.default.createElement(
       TextField_default,
       {
         label: "Front",
@@ -50043,7 +50085,7 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
         onChange: (e) => setBack(e.target.value),
         required: true
       }
-    ), /* @__PURE__ */ import_react10.default.createElement(Button_default, { type: "submit", variant: "contained" }, currentFlashcard ? "Update" : "Create"));
+    ), /* @__PURE__ */ import_react10.default.createElement(Button_default, { type: "submit", variant: "contained" }, currentFlashcard ? "Update" : "Create"))))));
   };
   var FlashcardForm_default = FlashcardForm;
 
@@ -50129,7 +50171,7 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
 
   // client/components/Login.tsx
   var import_react13 = __toESM(require_react());
-  var customTheme2 = createTheme_default2({
+  var customTheme4 = createTheme_default2({
     palette: {
       mode: "dark",
       primary: {
@@ -50169,7 +50211,7 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
         console.error("Login failed:", error);
       });
     };
-    return /* @__PURE__ */ import_react13.default.createElement(ThemeProvider5, { theme: customTheme2 }, /* @__PURE__ */ import_react13.default.createElement(Box_default, { sx: { backgroundColor: "#333", minHeight: "100vh" } }, /* @__PURE__ */ import_react13.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react13.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react13.default.createElement(Button_default, { color: "secondary", component: Link, to: "/", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Return"))), /* @__PURE__ */ import_react13.default.createElement(Container_default, { maxWidth: "sm", sx: { textAlign: "center", py: 8 } }, /* @__PURE__ */ import_react13.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react13.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react13.default.createElement(Typography_default, { variant: "h3", component: "h2", gutterBottom: true }, "Login"), /* @__PURE__ */ import_react13.default.createElement(
+    return /* @__PURE__ */ import_react13.default.createElement(ThemeProvider5, { theme: customTheme4 }, /* @__PURE__ */ import_react13.default.createElement(Box_default, { sx: { backgroundColor: "#333", minHeight: "100vh" } }, /* @__PURE__ */ import_react13.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react13.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react13.default.createElement(Button_default, { color: "secondary", component: Link, to: "/", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Return"))), /* @__PURE__ */ import_react13.default.createElement(Container_default, { maxWidth: "sm", sx: { textAlign: "center", py: 8 } }, /* @__PURE__ */ import_react13.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react13.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react13.default.createElement(Typography_default, { variant: "h3", component: "h2", gutterBottom: true }, "Login"), /* @__PURE__ */ import_react13.default.createElement(
       TextField_default,
       {
         label: "Email",
@@ -50193,7 +50235,7 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
 
   // client/components/Register.tsx
   var import_react14 = __toESM(require_react());
-  var customTheme3 = createTheme_default2({
+  var customTheme5 = createTheme_default2({
     palette: {
       mode: "dark",
       primary: {
@@ -50234,7 +50276,7 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
         console.error("Registration failed:", error);
       });
     };
-    return /* @__PURE__ */ import_react14.default.createElement(ThemeProvider5, { theme: customTheme3 }, /* @__PURE__ */ import_react14.default.createElement(Box_default, { sx: { backgroundColor: "#333", minHeight: "100vh" } }, /* @__PURE__ */ import_react14.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react14.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react14.default.createElement(Button_default, { color: "secondary", component: Link, to: "/", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Return"))), /* @__PURE__ */ import_react14.default.createElement(Container_default, { maxWidth: "sm", sx: { textAlign: "center", py: 8 } }, /* @__PURE__ */ import_react14.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react14.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react14.default.createElement(Typography_default, { variant: "h3", component: "h2", gutterBottom: true }, "Register"), /* @__PURE__ */ import_react14.default.createElement(
+    return /* @__PURE__ */ import_react14.default.createElement(ThemeProvider5, { theme: customTheme5 }, /* @__PURE__ */ import_react14.default.createElement(Box_default, { sx: { backgroundColor: "#333", minHeight: "100vh" } }, /* @__PURE__ */ import_react14.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react14.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react14.default.createElement(Button_default, { color: "secondary", component: Link, to: "/", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Return"))), /* @__PURE__ */ import_react14.default.createElement(Container_default, { maxWidth: "sm", sx: { textAlign: "center", py: 8 } }, /* @__PURE__ */ import_react14.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react14.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react14.default.createElement(Typography_default, { variant: "h3", component: "h2", gutterBottom: true }, "Register"), /* @__PURE__ */ import_react14.default.createElement(
       TextField_default,
       {
         label: "Name",
