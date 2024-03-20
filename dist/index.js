@@ -50091,6 +50091,27 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
 
   // client/components/DeckList.tsx
   var import_react11 = __toESM(require_react());
+  var customTheme4 = createTheme_default2({
+    palette: {
+      mode: "dark",
+      primary: {
+        main: "#fff"
+      },
+      secondary: {
+        main: "#f8c8dc"
+      },
+      background: {
+        default: "#333",
+        paper: "#333"
+      }
+    },
+    typography: {
+      fontFamily: '"Playfair Display", serif',
+      allVariants: {
+        color: "#fff"
+      }
+    }
+  });
   var DeckList = () => {
     const decks = useSelector((state) => state.deck.decks);
     const dispatch = useDispatch();
@@ -50100,12 +50121,33 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
     const handleDelete = (id) => {
       fetch(`/api/decks/${id}`, { method: "DELETE" }).then(() => dispatch(deleteDeck(id)));
     };
-    return /* @__PURE__ */ import_react11.default.createElement("div", null, /* @__PURE__ */ import_react11.default.createElement("h2", null, "Decks"), /* @__PURE__ */ import_react11.default.createElement(Button_default, { variant: "contained", component: Link, to: "/decks/new" }, "Create Deck"), /* @__PURE__ */ import_react11.default.createElement(List_default, null, decks.map((deck) => /* @__PURE__ */ import_react11.default.createElement(ListItem_default, { key: deck.id }, /* @__PURE__ */ import_react11.default.createElement(ListItemText_default, { primary: deck.name, secondary: deck.description }), /* @__PURE__ */ import_react11.default.createElement(Button_default, { component: Link, to: `/decks/${deck.id}/edit` }, "Edit"), /* @__PURE__ */ import_react11.default.createElement(Button_default, { onClick: () => handleDelete(deck.id) }, "Delete")))));
+    return /* @__PURE__ */ import_react11.default.createElement(ThemeProvider5, { theme: customTheme4 }, /* @__PURE__ */ import_react11.default.createElement(Box_default, { sx: { backgroundColor: "#333", minHeight: "100vh" } }, /* @__PURE__ */ import_react11.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react11.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react11.default.createElement(Button_default, { color: "secondary", component: Link, to: "/", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Home"))), /* @__PURE__ */ import_react11.default.createElement(Container_default, { maxWidth: "sm", sx: { textAlign: "center", py: 8 } }, /* @__PURE__ */ import_react11.default.createElement(Typography_default, { variant: "h4", component: "h2", sx: { mb: 4 } }, "Decks"), /* @__PURE__ */ import_react11.default.createElement(Button_default, { variant: "contained", color: "secondary", component: Link, to: "/decks/new", sx: { mb: 4 } }, "Create Deck"), /* @__PURE__ */ import_react11.default.createElement(List_default, null, decks.map((deck) => /* @__PURE__ */ import_react11.default.createElement(ListItem_default, { key: deck.id }, /* @__PURE__ */ import_react11.default.createElement(ListItemText_default, { primary: deck.name }), /* @__PURE__ */ import_react11.default.createElement(Button_default, { variant: "outlined", color: "secondary", component: Link, to: `/decks/${deck.id}/edit`, sx: { mr: 2 } }, "Edit"), /* @__PURE__ */ import_react11.default.createElement(Button_default, { variant: "outlined", color: "secondary", onClick: () => handleDelete(deck.id) }, "Delete")))))));
   };
   var DeckList_default = DeckList;
 
   // client/components/DeckForm.tsx
   var import_react12 = __toESM(require_react());
+  var customTheme5 = createTheme_default2({
+    palette: {
+      mode: "dark",
+      primary: {
+        main: "#fff"
+      },
+      secondary: {
+        main: "#f8c8dc"
+      },
+      background: {
+        default: "#333",
+        paper: "#333"
+      }
+    },
+    typography: {
+      fontFamily: '"Playfair Display", serif',
+      allVariants: {
+        color: "#fff"
+      }
+    }
+  });
   var DeckForm = () => {
     const [name, setName] = (0, import_react12.useState)("");
     const [description, setDescription] = (0, import_react12.useState)("");
@@ -50150,7 +50192,7 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
         });
       }
     };
-    return /* @__PURE__ */ import_react12.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react12.default.createElement("h2", null, currentDeck ? "Edit Deck" : "Create Deck"), /* @__PURE__ */ import_react12.default.createElement(
+    return /* @__PURE__ */ import_react12.default.createElement(ThemeProvider5, { theme: customTheme5 }, /* @__PURE__ */ import_react12.default.createElement(Box_default, { sx: { backgroundColor: "#333", minHeight: "100vh" } }, /* @__PURE__ */ import_react12.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react12.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react12.default.createElement(Button_default, { color: "secondary", component: Link, to: "/", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Home"))), /* @__PURE__ */ import_react12.default.createElement(Container_default, { maxWidth: "sm", sx: { textAlign: "center", py: 8 } }, /* @__PURE__ */ import_react12.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react12.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react12.default.createElement(Typography_default, { variant: "h3", component: "h2", gutterBottom: true }, "Create Deck"), /* @__PURE__ */ import_react12.default.createElement(
       TextField_default,
       {
         label: "Name",
@@ -50165,13 +50207,13 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
         value: description,
         onChange: (e) => setDescription(e.target.value)
       }
-    ), /* @__PURE__ */ import_react12.default.createElement(Button_default, { type: "submit", variant: "contained" }, currentDeck ? "Update" : "Create"));
+    ), /* @__PURE__ */ import_react12.default.createElement(Button_default, { type: "submit", variant: "contained" }, currentDeck ? "Update" : "Create"))))));
   };
   var DeckForm_default = DeckForm;
 
   // client/components/Login.tsx
   var import_react13 = __toESM(require_react());
-  var customTheme4 = createTheme_default2({
+  var customTheme6 = createTheme_default2({
     palette: {
       mode: "dark",
       primary: {
@@ -50211,7 +50253,7 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
         console.error("Login failed:", error);
       });
     };
-    return /* @__PURE__ */ import_react13.default.createElement(ThemeProvider5, { theme: customTheme4 }, /* @__PURE__ */ import_react13.default.createElement(Box_default, { sx: { backgroundColor: "#333", minHeight: "100vh" } }, /* @__PURE__ */ import_react13.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react13.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react13.default.createElement(Button_default, { color: "secondary", component: Link, to: "/", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Return"))), /* @__PURE__ */ import_react13.default.createElement(Container_default, { maxWidth: "sm", sx: { textAlign: "center", py: 8 } }, /* @__PURE__ */ import_react13.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react13.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react13.default.createElement(Typography_default, { variant: "h3", component: "h2", gutterBottom: true }, "Login"), /* @__PURE__ */ import_react13.default.createElement(
+    return /* @__PURE__ */ import_react13.default.createElement(ThemeProvider5, { theme: customTheme6 }, /* @__PURE__ */ import_react13.default.createElement(Box_default, { sx: { backgroundColor: "#333", minHeight: "100vh" } }, /* @__PURE__ */ import_react13.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react13.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react13.default.createElement(Button_default, { color: "secondary", component: Link, to: "/", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Return"))), /* @__PURE__ */ import_react13.default.createElement(Container_default, { maxWidth: "sm", sx: { textAlign: "center", py: 8 } }, /* @__PURE__ */ import_react13.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react13.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react13.default.createElement(Typography_default, { variant: "h3", component: "h2", gutterBottom: true }, "Login"), /* @__PURE__ */ import_react13.default.createElement(
       TextField_default,
       {
         label: "Email",
@@ -50235,7 +50277,7 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
 
   // client/components/Register.tsx
   var import_react14 = __toESM(require_react());
-  var customTheme5 = createTheme_default2({
+  var customTheme7 = createTheme_default2({
     palette: {
       mode: "dark",
       primary: {
@@ -50276,7 +50318,7 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
         console.error("Registration failed:", error);
       });
     };
-    return /* @__PURE__ */ import_react14.default.createElement(ThemeProvider5, { theme: customTheme5 }, /* @__PURE__ */ import_react14.default.createElement(Box_default, { sx: { backgroundColor: "#333", minHeight: "100vh" } }, /* @__PURE__ */ import_react14.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react14.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react14.default.createElement(Button_default, { color: "secondary", component: Link, to: "/", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Return"))), /* @__PURE__ */ import_react14.default.createElement(Container_default, { maxWidth: "sm", sx: { textAlign: "center", py: 8 } }, /* @__PURE__ */ import_react14.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react14.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react14.default.createElement(Typography_default, { variant: "h3", component: "h2", gutterBottom: true }, "Register"), /* @__PURE__ */ import_react14.default.createElement(
+    return /* @__PURE__ */ import_react14.default.createElement(ThemeProvider5, { theme: customTheme7 }, /* @__PURE__ */ import_react14.default.createElement(Box_default, { sx: { backgroundColor: "#333", minHeight: "100vh" } }, /* @__PURE__ */ import_react14.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react14.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react14.default.createElement(Button_default, { color: "secondary", component: Link, to: "/", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Return"))), /* @__PURE__ */ import_react14.default.createElement(Container_default, { maxWidth: "sm", sx: { textAlign: "center", py: 8 } }, /* @__PURE__ */ import_react14.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react14.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react14.default.createElement(Typography_default, { variant: "h3", component: "h2", gutterBottom: true }, "Register"), /* @__PURE__ */ import_react14.default.createElement(
       TextField_default,
       {
         label: "Name",
