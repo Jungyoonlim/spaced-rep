@@ -58,15 +58,37 @@ const Register: React.FC = () => {
 
   return (
     <ThemeProvider theme={customTheme}>
-      <Box sx={{ backgroundColor: '#333', minHeight: '100vh' }}>
-      <AppBar position="static">
-        <Toolbar>
+      <Box sx={{
+        backgroundColor: '#333',
+        minHeight: '100vh',
+        backgroundImage: 'linear-gradient(to bottom right, #444, #222)', 
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center', 
+      }}>
+      <AppBar position="static" sx={{
+          backgroundColor: '#f8c8dc',
+          boxShadow: 'none',
+          mx: 'auto',
+          maxWidth: 'calc(100% - 48px)',
+          borderRadius: 50,
+          mt: 2, 
+        }}>
+        <Toolbar sx={{ justifyContent: 'space-between', padding: '0 24px' }}>
       <Button color="secondary" component={Link} to="/" variant="contained" sx={{ fontSize: '1.1rem', padding: '8px 10px' }}>
           Return
         </Button>
         </Toolbar>
       </AppBar>
-      <Container maxWidth="sm" sx={{ textAlign: 'center', py: 8 }}>
+      <Container sx={{
+          textAlign: 'center',
+          py: 8,
+          flexGrow: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center', 
+          alignItems: 'center', 
+        }}>
       <Toolbar>
       <form onSubmit={handleSubmit}>
         <Typography variant="h3" component="h2" gutterBottom>

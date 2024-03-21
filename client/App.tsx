@@ -94,7 +94,7 @@ const App: React.FC = () => {
             Learn Everything.<br />Right Instantly.
           </Typography>
           <Typography variant="h5" sx={{ mb: 4 }}>
-            Start learning today
+            From Greek poetry to Quantum Mechanics
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
           <Button variant="contained" color="secondary" component={Link} to="/flashcards" sx={{

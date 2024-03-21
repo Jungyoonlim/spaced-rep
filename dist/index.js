@@ -49993,7 +49993,7 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
       fontWeight: "bold",
       textAlign: "center",
       width: "100%"
-    } }, "Learn Everything.", /* @__PURE__ */ import_react8.default.createElement("br", null), "Right Instantly."), /* @__PURE__ */ import_react8.default.createElement(Typography_default, { variant: "h5", sx: { mb: 4 } }, "Start learning today"), /* @__PURE__ */ import_react8.default.createElement(Box_default, { sx: { display: "flex", justifyContent: "center", gap: "20px" } }, /* @__PURE__ */ import_react8.default.createElement(Button_default, { variant: "contained", color: "secondary", component: Link, to: "/flashcards", sx: {
+    } }, "Learn Everything.", /* @__PURE__ */ import_react8.default.createElement("br", null), "Right Instantly."), /* @__PURE__ */ import_react8.default.createElement(Typography_default, { variant: "h5", sx: { mb: 4 } }, "From Greek poetry to Quantum Mechanics"), /* @__PURE__ */ import_react8.default.createElement(Box_default, { sx: { display: "flex", justifyContent: "center", gap: "20px" } }, /* @__PURE__ */ import_react8.default.createElement(Button_default, { variant: "contained", color: "secondary", component: Link, to: "/flashcards", sx: {
       fontSize: "1.4rem",
       padding: "10px 32px",
       borderRadius: "10px",
@@ -50308,7 +50308,29 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
         console.error("Login failed:", error);
       });
     };
-    return /* @__PURE__ */ import_react13.default.createElement(ThemeProvider5, { theme: customTheme6 }, /* @__PURE__ */ import_react13.default.createElement(Box_default, { sx: { backgroundColor: "#333", minHeight: "100vh" } }, /* @__PURE__ */ import_react13.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react13.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react13.default.createElement(Button_default, { color: "secondary", component: Link, to: "/", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Return"))), /* @__PURE__ */ import_react13.default.createElement(Container_default, { maxWidth: "sm", sx: { textAlign: "center", py: 8 } }, /* @__PURE__ */ import_react13.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react13.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react13.default.createElement(Typography_default, { variant: "h3", component: "h2", gutterBottom: true }, "Login"), /* @__PURE__ */ import_react13.default.createElement(
+    return /* @__PURE__ */ import_react13.default.createElement(ThemeProvider5, { theme: customTheme6 }, /* @__PURE__ */ import_react13.default.createElement(Box_default, { sx: {
+      backgroundColor: "#333",
+      minHeight: "100vh",
+      backgroundImage: "linear-gradient(to bottom right, #444, #222)",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center"
+    } }, /* @__PURE__ */ import_react13.default.createElement(AppBar_default, { position: "static", sx: {
+      backgroundColor: "#f8c8dc",
+      boxShadow: "none",
+      mx: "auto",
+      maxWidth: "calc(100% - 48px)",
+      borderRadius: 50,
+      mt: 2
+    } }, /* @__PURE__ */ import_react13.default.createElement(Toolbar_default, { sx: { justifyContent: "space-between", padding: "0 24px" } }, /* @__PURE__ */ import_react13.default.createElement(Button_default, { color: "secondary", component: Link, to: "/", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Return"))), /* @__PURE__ */ import_react13.default.createElement(Container_default, { sx: {
+      textAlign: "center",
+      py: 8,
+      flexGrow: 1,
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center"
+    } }, /* @__PURE__ */ import_react13.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react13.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react13.default.createElement(Typography_default, { variant: "h3", component: "h2", gutterBottom: true }, "Login"), /* @__PURE__ */ import_react13.default.createElement(
       TextField_default,
       {
         label: "Email",
@@ -50373,7 +50395,29 @@ Please use another name.` : (0, import_formatMuiErrorMessage.default)(18));
         console.error("Registration failed:", error);
       });
     };
-    return /* @__PURE__ */ import_react14.default.createElement(ThemeProvider5, { theme: customTheme7 }, /* @__PURE__ */ import_react14.default.createElement(Box_default, { sx: { backgroundColor: "#333", minHeight: "100vh" } }, /* @__PURE__ */ import_react14.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react14.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react14.default.createElement(Button_default, { color: "secondary", component: Link, to: "/", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Return"))), /* @__PURE__ */ import_react14.default.createElement(Container_default, { maxWidth: "sm", sx: { textAlign: "center", py: 8 } }, /* @__PURE__ */ import_react14.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react14.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react14.default.createElement(Typography_default, { variant: "h3", component: "h2", gutterBottom: true }, "Register"), /* @__PURE__ */ import_react14.default.createElement(
+    return /* @__PURE__ */ import_react14.default.createElement(ThemeProvider5, { theme: customTheme7 }, /* @__PURE__ */ import_react14.default.createElement(Box_default, { sx: {
+      backgroundColor: "#333",
+      minHeight: "100vh",
+      backgroundImage: "linear-gradient(to bottom right, #444, #222)",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center"
+    } }, /* @__PURE__ */ import_react14.default.createElement(AppBar_default, { position: "static", sx: {
+      backgroundColor: "#f8c8dc",
+      boxShadow: "none",
+      mx: "auto",
+      maxWidth: "calc(100% - 48px)",
+      borderRadius: 50,
+      mt: 2
+    } }, /* @__PURE__ */ import_react14.default.createElement(Toolbar_default, { sx: { justifyContent: "space-between", padding: "0 24px" } }, /* @__PURE__ */ import_react14.default.createElement(Button_default, { color: "secondary", component: Link, to: "/", variant: "contained", sx: { fontSize: "1.1rem", padding: "8px 10px" } }, "Return"))), /* @__PURE__ */ import_react14.default.createElement(Container_default, { sx: {
+      textAlign: "center",
+      py: 8,
+      flexGrow: 1,
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center"
+    } }, /* @__PURE__ */ import_react14.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react14.default.createElement("form", { onSubmit: handleSubmit }, /* @__PURE__ */ import_react14.default.createElement(Typography_default, { variant: "h3", component: "h2", gutterBottom: true }, "Register"), /* @__PURE__ */ import_react14.default.createElement(
       TextField_default,
       {
         label: "Name",
