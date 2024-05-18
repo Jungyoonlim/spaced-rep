@@ -1,7 +1,7 @@
 
 # Spaced Repetition App with AI Assistance
 
-This is a modern, intuitive, and user-friendly spaced repetition app that leverages AI to enhance the learning experience. The app provides a clean and visually appealing interface, with easy navigation and a seamless user flow. It incorporates AI capabilities to assist users in their studies, providing personalized recommendations, explanations, and feedback.
+This is a modern, intuitive, and user-friendly spaced repetition app using AI 
 
 ## Features
 
